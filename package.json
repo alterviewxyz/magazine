@@ -1,7 +1,35 @@
 {
   "name": "alterview",
   "private": true,
+  "scripts": {
+    "start": "lerna run start --stream",
+    "start:frontend": "lerna run start --parallel --scope @alterview/frontend --include-dependencies",
+    "build": "lerna run build --stream",
+    "build:frontend": "lerna run build --stream --scope @alterview/frontend --include-dependencies",
+    "test:no-watch:frontend": "lerna run test:no-watch --stream --scopealterview@alterview/frontend",
+    "build:changed": "lerna run build --since",
+    "version": "lerna version --include-merged-tags --no-push -y --conventional-commits --reject-cy",
+    "test": "jest",
+    "format": "prettier --write \"**/*.ts\"  \"!**/lib/**\"",
+    "lint": "eslint \"packages/**/{src,__tests__}/**/*.ts\" -f eslint-formatter-friendly"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  },
+  "dependencies": {
+    "postcss-nested": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.2.0"
+  },
   "devDependencies": {
+    "lerna": "^3.20.2",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "3.1.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
     "@types/jest": "^24.0.22",
     "@types/node": "^12.12.7",
     "jest": "^24.9.0",
@@ -15,12 +43,16 @@
     "eslint-formatter-friendly": "^7.0.0",
     "eslint-plugin-prettier": "^3.1.1"
   },
-  "scripts": {
-    "test": "jest",
-    "format": "prettier --write \"**/*.ts\"  \"!**/lib/**\"",
-    "lint": "eslint \"packages/**/{src,__tests__}/**/*.ts\" -f eslint-formatter-friendly"
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "git cz --hook || true",
+      "pre-commit": "lerna run --concurrency 1 --stream husky-pre-commit --since HEAD",
+      "pre-push": "lerna run --concurrency 1 --stream husky-pre-push --since $(git rev-parse --abbrev-ref --symbolic-full-name @{u} || echo \"origin/develop\")"
+    }
   },
-  "dependencies": {
-    "lerna": "^3.20.2"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
