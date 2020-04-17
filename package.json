@@ -4,9 +4,9 @@
   "scripts": {
     "// start and build commands": "",
     "start": "lerna run start --stream",
-    "start:frontend": "lerna run start --parallel --scope @alterview/frontend --include-dependencies",
+    "start:components": "lerna run start --parallel --scope @alterview/components --include-dependencies",
     "build": "lerna run build --stream",
-    "build:frontend": "lerna run build --stream --scope @alterview/frontend --include-dependencies",
+    "build:components": "lerna run build --stream --scope @alterview/components --include-dependencies",
     "build:changed": "lerna run build --since",
     "// chore commands": "",
     "test": "jest",

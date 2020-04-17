@@ -3,4 +3,4 @@ node_js:
   - "10"
 script:
   - yarn test:no-watch:components
-  - lerna run build
+  - yarn build:components
