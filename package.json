@@ -2,16 +2,26 @@
   "name": "alterview",
   "private": true,
   "scripts": {
+    "// start and build commands": "",
     "start": "lerna run start --stream",
     "start:frontend": "lerna run start --parallel --scope @alterview/frontend --include-dependencies",
     "build": "lerna run build --stream",
     "build:frontend": "lerna run build --stream --scope @alterview/frontend --include-dependencies",
-    "test:no-watch:frontend": "lerna run test:no-watch --stream --scopealterview@alterview/frontend",
     "build:changed": "lerna run build --since",
-    "version": "lerna version --include-merged-tags --no-push -y --conventional-commits --reject-cy",
+    "// chore commands": "",
     "test": "jest",
+    "test:no-watch:frontend": "lerna run test:no-watch --stream --scopealterview@alterview/frontend",
     "format": "prettier --write \"**/*.ts\"  \"!**/lib/**\"",
-    "lint": "eslint \"packages/**/{src,__tests__}/**/*.ts\" -f eslint-formatter-friendly"
+    "lint": "eslint \"packages/**/{src,__tests__}/**/*.ts\" -f eslint-formatter-friendly",
+    "// versioning commands": "",
+    "version": "lerna version --include-merged-tags --no-push -y --conventional-commits",
+    "versionup": "lerna version --conventional-commits",
+    "versionup:patch": "lerna version patch --conventional-commits --no-git-tag-version",
+    "versionup:minor": "lerna version minor --conventional-commits --no-git-tag-version",
+    "versionup:major": "lerna version major --conventional-commits --no-git-tag-version",
+    "postversionup": "npm run commit-version",
+    "commit-version": "git add . && git commit -m \"chore(release): publish `node -p 'require(\"./lerna.json\").version'`\"",
+    "release": "lerna publish from-package"
   },
   "workspaces": {
     "packages": [
