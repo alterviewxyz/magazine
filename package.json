@@ -55,7 +55,7 @@
   },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "git cz --hook || true",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook",
       "pre-commit": "lerna run --concurrency 1 --stream husky-pre-commit --since HEAD",
       "pre-push": "lerna run --concurrency 1 --stream husky-pre-push --since $(git rev-parse --abbrev-ref --symbolic-full-name @{u} || echo \"origin/develop\")"
     }
