@@ -5,12 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.0.1 (2020-04-17)
 
-**Note:** Version bump only for package alterview
-
-
-
-
-
-## 0.0.1 (2020-04-18)
-
-- Initaiting the project
+**Note:** Version bump only for package @alterview/frontend
