@@ -10,7 +10,7 @@
     "build:changed": "lerna run build --since",
     "// chore commands": "",
     "test": "jest",
-    "test:no-watch:frontend": "lerna run test:no-watch --stream --scopealterview@alterview/frontend",
+    "test:no-watch:components": "lerna run test:no-watch --stream --scope @alterview/components",
     "format": "prettier --write \"**/*.ts\"  \"!**/lib/**\"",
     "lint": "eslint \"packages/**/{src,__tests__}/**/*.ts\" -f eslint-formatter-friendly",
     "// versioning commands": "",
