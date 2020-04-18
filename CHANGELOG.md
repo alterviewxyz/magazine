@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package alterview
 
-
-
-
-
 ## 0.0.1 (2020-04-18)
 
 - Initaiting the project

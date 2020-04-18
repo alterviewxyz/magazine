@@ -5,11 +5,17 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   extends: [
     "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier",
     "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
   ],
   plugins: ["@typescript-eslint", "prettier"],
   rules: {
@@ -41,9 +47,17 @@ module.exports = {
     "@typescript-eslint/no-parameter-properties": 0,
     "@typescript-eslint/no-unused-vars": 0,
     "@typescript-eslint/interface-name-prefix": 0,
+    "react/prop-types": "off",
+    "import/no-extraneous-dependencies": ["error"],
   },
   env: {
-    browser: true,
     node: true,
+    browser: true,
+    jest: true,
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
   },
 };
