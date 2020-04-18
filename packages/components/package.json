@@ -48,12 +48,6 @@
       "prettier --write"
     ]
   },
-  "jest": {
-    "coverageReporters": [
-      "json-summary",
-      "text"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",

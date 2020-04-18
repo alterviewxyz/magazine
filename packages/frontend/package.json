@@ -76,12 +76,6 @@
       "prettier --write"
     ]
   },
-  "jest": {
-    "coverageReporters": [
-      "json-summary",
-      "text"
-    ]
-  },
   "keywords": [],
   "author": ""
 }
