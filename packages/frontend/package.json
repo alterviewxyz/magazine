@@ -16,8 +16,10 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "start": "npm run dev",
-    "test": "npm run type-check && npm run lint",
-    "type-check": "tsc"
+    "test": "npm run lint",
+    "test:no-watch": "npm run lint",
+    "husky-pre-commit": "lint-staged",
+    "husky-pre-push": "yarn tsc && yarn test:no-watch"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -69,7 +71,20 @@
     "prettier": "^1.18.2",
     "rimraf": "^2.6.3"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{json,css,md,js,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text"
+    ]
+  },
   "keywords": [],
-  "author": "",
-  "license": "GPL-V3"
+  "author": ""
 }
