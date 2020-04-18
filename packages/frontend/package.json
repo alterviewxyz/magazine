@@ -16,8 +16,9 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "start": "npm run dev",
-    "test": "npm run lint",
-    "test:no-watch": "npm run lint",
+    "test": "jest --watchAll=true",
+    "test:no-watch": "TZ=UTC jest --coverage --watchAll=false",
+    "test:badges": "npm run test:no-watch  && jest-coverage-badges",
     "husky-pre-commit": "lint-staged",
     "husky-pre-push": "yarn tsc && yarn test:no-watch"
   },
