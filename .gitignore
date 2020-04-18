@@ -3,8 +3,9 @@ node_modules/
 packages/*/lib
 
 # tests
-coverage/*
-!coverage/*.svg
+coverage/
+coverage/coverage-summary.json
+!/coverage/*.svg
 
 # misc
 .DS_Store
