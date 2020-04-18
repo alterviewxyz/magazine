@@ -2,5 +2,7 @@ language: node_js
 node_js:
   - "10"
 script:
-  - yarn test:no-watch:components
   - yarn build:components
+  - yarn build:frontend
+  - yarn test:no-watch:components
+  # - yarn test:no-watch:frontend

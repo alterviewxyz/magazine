@@ -16,6 +16,8 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+.cache/
+public
 
 # editor configs
 .vscode/
