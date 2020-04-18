@@ -13,6 +13,7 @@
     "build": "craco build",
     "test": "TZ=UTC craco test",
     "test:no-watch": "TZ=UTC craco test --coverage --watchAll=false",
+    "test:badges": "npm run test:no-watch  && jest-coverage-badges",
     "tsc": "tsc --noEmit",
     "husky-pre-commit": "lint-staged",
     "husky-pre-push": "yarn tsc && yarn test:no-watch"
@@ -26,6 +27,7 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.1.2",
     "classnames": "^2.2.6",
+    "jest-coverage-badges": "^1.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
@@ -45,6 +47,12 @@
     ],
     "*.{json,css,md,js,jsx,ts,tsx}": [
       "prettier --write"
+    ]
+  },
+  "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text"
     ]
   },
   "browserslist": {

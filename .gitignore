@@ -3,7 +3,8 @@ node_modules/
 packages/*/lib
 
 # tests
-coverage/
+coverage/*
+!coverage/*.svg
 
 # misc
 .DS_Store
