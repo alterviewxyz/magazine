@@ -13,6 +13,7 @@
     "build": "craco build",
     "test": "TZ=UTC craco test",
     "test:no-watch": "TZ=UTC craco test --coverage --watchAll=false",
+    "test:badges": "npm run test:no-watch  && jest-coverage-badges",
     "tsc": "tsc --noEmit",
     "husky-pre-commit": "lint-staged",
     "husky-pre-push": "yarn tsc && yarn test:no-watch"
@@ -28,7 +29,7 @@
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.3.0",
+    "react-scripts": "^3.4.1",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {

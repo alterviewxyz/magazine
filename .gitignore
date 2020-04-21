@@ -3,7 +3,8 @@ node_modules/
 packages/*/lib
 
 # tests
-coverage/
+coverage-summary.json
+!/coverage/*.svg
 
 # misc
 .DS_Store
@@ -14,6 +15,8 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+.cache/
+public
 
 # editor configs
 .vscode/
