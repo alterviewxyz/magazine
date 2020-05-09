@@ -16,7 +16,9 @@
     "test:badges": "npm run test:no-watch  && jest-coverage-badges",
     "tsc": "tsc --noEmit",
     "husky-pre-commit": "lint-staged",
-    "husky-pre-push": "yarn tsc && yarn test:no-watch"
+    "husky-pre-push": "yarn tsc && yarn test:no-watch",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +32,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
+    "react-styleguidist": "^11.0.6",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
